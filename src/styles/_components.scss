@@ -1,0 +1,253 @@
+//////////////////////////////////
+/// TOP BAR COMPONENTS
+.top-bar__logo {
+	width: 4rem;
+	height: 4rem;
+	font-size: 5rem;
+	color: var(--color-grey-light-2);
+}
+
+.top-bar__options-font-dropdown {
+	border-left: none;
+	border-top: none;
+	border-bottom: none;
+	border-right: 0.1rem solid var(--color-grey-light-2);
+	padding-right: 1.4rem;
+	margin-right: 2rem;
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+
+.top-bar__options-switch {
+	position: relative;
+	display: inline-block;
+	width: 5rem;
+	height: 2.5rem;
+
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+
+		&:checked + .slider {
+			background-color: var(--color-purple);
+		}
+
+		&:focus + .slider {
+			box-shadow: 0 0 0.1rem var(--color-purple);
+		}
+
+		&:checked + .slider:before {
+			-webkit-transform: translateX(2.6rem);
+			-ms-transform: translateX(2.6rem);
+			transform: translateX(2.6rem);
+		}
+	}
+}
+
+.top-bar__options-theme-icon {
+	height: 2.4rem;
+	margin-left: 1.4rem;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--color-grey-light-2);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+
+	&:before {
+		position: absolute;
+		content: '';
+		height: 1.75rem;
+		width: 1.75rem;
+		left: 0.4rem;
+		bottom: 0.4rem;
+		background-color: white;
+		-webkit-transition: 0.4s;
+		transition: 0.4s;
+	}
+}
+.slider.round {
+	border-radius: 3.4rem;
+}
+.slider.round:before {
+	border-radius: 50%;
+}
+
+/////////////////////////////////////
+/// SEARCH BAR COMPONENTS
+.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.search-bar__input {
+	font-size: 2rem;
+	font-family: inherit;
+	font-weight: 700;
+	color: inherit;
+	border: none;
+	padding: 0.75rem 2rem;
+	width: 100%;
+	border-radius: 1.6rem;
+	height: 6.4rem;
+	margin-right: -6.25rem;
+	margin-left: -2rem;
+	transition: all 0.2s;
+
+	&:focus {
+		outline-color: var(--color-purple);
+	}
+}
+.search-bar__button {
+	height: 5rem;
+	width: 4rem;
+	border: none;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+//////////////////////////////////
+/// WORD COMPONENTS
+.word {
+	h1 {
+		font-size: 6.4rem;
+		font-weight: 700;
+		margin-bottom: 2rem;
+	}
+
+	&__pronunciation {
+		font-size: 2.4rem;
+		line-height: 2.9rem;
+		padding-top: 2rem;
+		color: var(--color-purple);
+	}
+}
+
+.pronunciation-button {
+	width: 7.5rem;
+	height: 7.5rem;
+	border-radius: 50%;
+	border: none;
+	background-color: rgba(164, 69, 237, 0.25);
+	cursor: pointer;
+
+	&:active {
+		background-color: var(--color-purple);
+	}
+	&:active svg {
+		fill: #fff;
+	}
+}
+
+////////////////////////////////////
+/// DEFINITION COMPONENTS
+.definition {
+	padding: 3rem 0;
+
+	&__word-type {
+		display: flex;
+		align-items: center;
+
+		h3 {
+			font-size: 2.4rem;
+			font-weight: 700;
+			font-style: italic;
+			padding-right: 1.5rem;
+		}
+	}
+
+	.line {
+		background-color: var(--color-grey-light-2);
+		right: 0;
+		height: 1px;
+		width: 100%;
+	}
+
+	h5 {
+		font-size: 2rem;
+		font-weight: 400;
+		color: var(--color-grey-light-1);
+	}
+
+	&__meaning {
+		padding: 3rem 0;
+
+		&-list {
+			padding: 1.5rem 3rem;
+
+			li {
+				font-size: 1.8rem;
+				font-weight: 400;
+				padding-bottom: 1.5rem;
+
+				&::marker {
+					color: var(--color-purple);
+				}
+			}
+		}
+	}
+
+	&__synonyms {
+		display: flex;
+
+		h5 {
+			padding-right: 2rem;
+		}
+
+		&-list a:link,
+		&-list a:visited {
+			font-size: 2rem;
+			font-weight: 700;
+			color: var(--color-purple);
+			text-decoration: none;
+			margin-right: 1.5rem;
+		}
+	}
+}
+
+/////////////////////////////////////
+/// NO RESULTS COMPONENT
+.no-results {
+	font-size: 1.8rem;
+	text-align: center;
+
+	h4 {
+		font-size: 2rem;
+		font-weight: 700;
+		padding: 2.5rem;
+	}
+}
+
+////////////////////////////////////////
+/// ERROR COMPONENT
+.error-message {
+	font-size: 1.8rem;
+	text-align: center;
+
+	h2 {
+		padding: 2.5rem;
+	}
+}

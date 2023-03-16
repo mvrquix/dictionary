@@ -1,0 +1,40 @@
+.container {
+	max-width: 100vw;
+	min-height: 100vh;
+}
+
+.app-wrapper {
+	max-width: 80rem;
+	margin: 0 auto;
+	padding-top: 8rem;
+}
+
+.top-bar {
+	font-size: 1.4rem;
+	height: 8rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__options {
+		display: flex;
+	}
+}
+
+.search-bar {
+	padding: 5rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.word-container {
+	padding: 3rem 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.definitions-container {
+	padding: 5rem 0;
+}
